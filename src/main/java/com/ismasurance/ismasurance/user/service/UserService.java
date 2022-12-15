@@ -1,7 +1,10 @@
 package com.ismasurance.ismasurance.user.service;
 
-import com.ismasurance.ismasurance.user.model.UserEntity;
+import com.ismasurance.ismasurance.user.api.v1.dto.UserRequest;
+import com.ismasurance.ismasurance.user.api.v1.dto.UserResponse;
 
 public interface UserService {
-    String createUser(UserEntity user);
+    UserResponse createUser(UserRequest user);
+
+    UserResponse signInValidation(UserRequest user);
 }
