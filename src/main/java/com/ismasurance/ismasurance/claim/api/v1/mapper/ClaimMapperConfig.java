@@ -29,9 +29,7 @@ public class ClaimMapperConfig {
             @Override
             public ClaimResponse claimEntityToClaimResponse(ClaimEntity claimEntity) {
                 ClaimResponse response = new ClaimResponse();
-                response.setClaimId(claimEntity.getClaimId());
-                response.setClnClaim(claimEntity.getClnClaim());
-                response.setClaClaim(claimEntity.getClaClaim());
+                response.setId(claimEntity.getId().toHexString());
                 response.setClaPolicy(claimEntity.getClaPolicy());
                 response.setHandlerName(claimEntity.getHandlerName());
                 response.setInsuredName(claimEntity.getInsuredName());

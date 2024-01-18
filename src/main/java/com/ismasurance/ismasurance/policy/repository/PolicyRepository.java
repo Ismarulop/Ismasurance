@@ -7,4 +7,6 @@ import org.springframework.stereotype.Repository;
 @Repository
 public interface PolicyRepository extends MongoRepository<PolicyEntity,String> {
     PolicyEntity findByInsuranceName(String insuranceName);
+
+    PolicyEntity findByClaPolicy(String claPolicy);
 }

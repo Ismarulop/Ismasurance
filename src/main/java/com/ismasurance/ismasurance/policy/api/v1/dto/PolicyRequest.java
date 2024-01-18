@@ -2,7 +2,7 @@ package com.ismasurance.ismasurance.policy.api.v1.dto;
 
 import lombok.Data;
 
-import javax.validation.constraints.NotBlank;
+import jakarta.validation.constraints.NotBlank;
 
 @Data
 public class PolicyRequest {

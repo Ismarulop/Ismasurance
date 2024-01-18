@@ -1,6 +1,6 @@
 package com.ismasurance.ismasurance.policy.service;
 
-import com.ismasurance.ismasurance.exception.RequestException;
+import com.ismasurance.ismasurance.exception.dto.RequestException;
 import com.ismasurance.ismasurance.policy.api.v1.dto.PolicyRequest;
 import com.ismasurance.ismasurance.policy.api.v1.dto.PolicyResponse;
 import com.ismasurance.ismasurance.policy.data.PolicyEntity;
@@ -21,7 +21,7 @@ public class PolicyServiceImpl implements PolicyService {
     public PolicyResponse createPolicy(PolicyRequest request) {
         PolicyEntity entity = policyMapper.policyRequestToPolicyEntity(request);
         if ("".equals(request.getInsuranceName()) || null == request.getInsuranceName()) {
-            throw new RequestException("Bad request",  HttpStatus.BAD_REQUEST,"400");
+            throw new RequestException("Bad request",  HttpStatus.BAD_REQUEST);
         }
         policyRepository.save(entity);
         return policyMapper.policyEntityToPolicyResponse(entity);

@@ -1,9 +1,11 @@
 package com.ismasurance.ismasurance.claim.data;
 
 import lombok.Data;
+import org.bson.types.ObjectId;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 import org.springframework.data.mongodb.core.mapping.Field;
+
 import java.util.Date;
 
 @Data
@@ -11,9 +13,7 @@ import java.util.Date;
 public class ClaimEntity {
     @Id
     @Field(name = "_id")
-    private String claimId;
-    @Field(name = "CLN_CLAIM")
-    private String clnClaim;
+    private ObjectId id;
     @Field(name = "CLA_CLAIM")
     private String claClaim;
     @Field(name = "CLA_POLICY")
@@ -30,7 +30,5 @@ public class ClaimEntity {
     private Date incidenceDate;
     @Field(name = "EXPIRATION_DATE")
     private Date expirationDate;
-
-
 
 }

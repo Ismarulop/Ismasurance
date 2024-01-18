@@ -15,7 +15,6 @@ public class UserMapperConfig {
             public UserEntity userRequestToUserEntity(UserRequest userRequest) {
                 UserEntity user = new UserEntity();
                 user.setUserName(userRequest.getUserName());
-                user.setPassword(userRequest.getPassword());
                 user.setEmail(userRequest.getEmail());
                 user.setPhone(userRequest.getPhone());
                 user.setCountry(userRequest.getCountry());
@@ -26,6 +25,8 @@ public class UserMapperConfig {
             @Override
             public UserResponse userEntityToUserResponse(UserEntity userEntity) {
                 UserResponse user = new UserResponse();
+                user.setId(userEntity.getId());
+                user.setUserId(userEntity.getUserId());
                 user.setUserName(userEntity.getUserName());
                 user.setEmail(userEntity.getEmail());
                 user.setPhone(userEntity.getPhone());
